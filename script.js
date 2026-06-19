@@ -1,10 +1,5 @@
-/* =============================================
-   script.js — M. Junaid Ashraf Personal Website
-   ============================================= */
-
 'use strict';
 
-/* ---- Navbar: scroll effect + active link ---- */
 const navbar  = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -20,7 +15,6 @@ function onScroll() {
 function updateActiveLink() {
   const sections = document.querySelectorAll('section[id]');
   let current = '';
-
   sections.forEach(section => {
     const sectionTop    = section.offsetTop - 120;
     const sectionBottom = sectionTop + section.offsetHeight;
@@ -28,11 +22,9 @@ function updateActiveLink() {
       current = section.id;
     }
   });
-
   navLinks.forEach(link => {
     link.classList.remove('active');
-    const href = link.getAttribute('href');
-    if (href === `#${current}`) {
+    if (link.getAttribute('href') === `#${current}`) {
       link.classList.add('active');
     }
   });
@@ -41,34 +33,29 @@ function updateActiveLink() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-/* ---- Mobile nav toggle ---- */
-const navToggle   = document.getElementById('navToggle');
+const navToggle    = document.getElementById('navToggle');
 const navLinksList = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
   navLinksList.classList.toggle('open');
 });
 
-// Close menu on link click
 navLinksList.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     navLinksList.classList.remove('open');
   });
 });
 
-/* ---- Hero fade-in on load ---- */
 window.addEventListener('load', () => {
   document.querySelectorAll('.fade-in').forEach(el => {
     el.classList.add('visible');
   });
 });
 
-/* ---- Scroll reveal (Intersection Observer) ---- */
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Stagger cards within the same parent
         const siblings = entry.target.parentElement.querySelectorAll('.reveal');
         let delay = 0;
         siblings.forEach((sib, idx) => {
@@ -87,7 +74,6 @@ document.querySelectorAll('.reveal').forEach(el => {
   revealObserver.observe(el);
 });
 
-/* ---- Lead Magnet Form ---- */
 const leadForm    = document.getElementById('leadForm');
 const leadSuccess = document.getElementById('leadSuccess');
 
@@ -97,8 +83,6 @@ if (leadForm) {
     const btn = leadForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-
-    // Simulate async action
     setTimeout(() => {
       leadForm.style.display = 'none';
       leadSuccess.classList.add('visible');
@@ -106,7 +90,6 @@ if (leadForm) {
   });
 }
 
-/* ---- Contact Form ---- */
 const contactForm    = document.getElementById('contactForm');
 const contactSuccess = document.getElementById('contactSuccess');
 
@@ -116,7 +99,6 @@ if (contactForm) {
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-
     setTimeout(() => {
       contactForm.style.display = 'none';
       contactSuccess.classList.add('visible');
@@ -124,7 +106,6 @@ if (contactForm) {
   });
 }
 
-/* ---- Smooth scroll polyfill for in-page links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const targetId = anchor.getAttribute('href');
