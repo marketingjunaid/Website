@@ -106,21 +106,33 @@ if (leadForm) {
   });
 }
 
-/* ---- Contact Form ---- */
+/* ---- Contact Form (Formspree) ---- */
 const contactForm    = document.getElementById('contactForm');
 const contactSuccess = document.getElementById('contactSuccess');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-
-    setTimeout(() => {
-      contactForm.style.display = 'none';
-      contactSuccess.classList.add('visible');
-    }, 700);
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        contactSuccess.classList.add('visible');
+      } else {
+        btn.textContent = 'Failed — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Failed — try again';
+      btn.disabled = false;
+    }
   });
 }
 
