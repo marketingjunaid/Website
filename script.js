@@ -100,12 +100,18 @@ if (contactForm) {
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
-      const res = await fetch(contactForm.action, {
+      const data = {
+        name:    contactForm.querySelector('[name="name"]').value,
+        email:   contactForm.querySelector('[name="email"]').value,
+        message: contactForm.querySelector('[name="message"]').value,
+      };
+      const res = await fetch('https://formsubmit.co/ajax/junaidashrafqureshi@gmail.com', {
         method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
       });
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success === 'true' || json.success === true) {
         contactForm.style.display = 'none';
         contactSuccess.classList.add('visible');
       } else {
