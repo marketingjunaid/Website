@@ -117,9 +117,10 @@ if (contactForm) {
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
+      const formData = new FormData(contactForm);
       const res = await fetch(contactForm.action, {
         method: 'POST',
-        body: new FormData(contactForm),
+        body: formData,
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
