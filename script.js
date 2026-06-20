@@ -213,10 +213,13 @@ if (leadForm) {
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Simulate async action
     setTimeout(() => {
       leadForm.style.display = 'none';
       leadSuccess.classList.add('visible');
+      const a = document.createElement('a');
+      a.href = 'brand-guide.pdf';
+      a.download = 'Brand_Identity_Quick_Guide.pdf';
+      a.click();
     }, 700);
   });
 }
