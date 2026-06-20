@@ -880,51 +880,33 @@ ul { list-style: none; }
   align-items: center;
 }
 
-/* CSS Book Mockup */
+/* Book Mockup */
 .lead-mockup {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.book-cover {
-  display: flex;
+.book-3d {
   transform: perspective(900px) rotateY(-15deg);
   transition: transform 0.4s ease;
-  filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.5));
+  filter: drop-shadow(-16px 16px 32px rgba(0,0,0,0.6));
+  border-radius: 4px;
+  overflow: hidden;
 }
-.book-cover:hover {
+.book-3d:hover {
   transform: perspective(900px) rotateY(-5deg);
 }
 
-.book-spine {
-  width: 32px;
-  background: linear-gradient(to right, #003f47, #005a65);
-  border-radius: 4px 0 0 4px;
-  flex-shrink: 0;
-}
-
-.book-face {
-  width: 260px;
-  height: 340px;
-  border-radius: 0 6px 6px 0;
-  border: 1px solid rgba(0,0,0,0.3);
-  border-left: none;
-  overflow: hidden;
-  position: relative;
-}
-
-.book-face--img {
-  padding: 0;
-}
-
-.book-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+.book-3d-img {
   display: block;
+  width: 280px;
+  height: auto;
+  border-radius: 4px;
+  max-width: none;
 }
+
+
 
 /* Lead Content */
 .lead-heading {
