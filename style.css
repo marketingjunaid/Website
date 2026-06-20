@@ -887,22 +887,43 @@ ul { list-style: none; }
   align-items: center;
 }
 
-.book-3d {
-  transform: perspective(900px) rotateY(-15deg);
+.book-3d-wrap {
+  position: relative;
+  display: inline-flex;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(-25deg) rotateX(3deg);
   transition: transform 0.4s ease;
-  filter: drop-shadow(-16px 16px 32px rgba(0,0,0,0.6));
-  border-radius: 4px;
-  overflow: hidden;
+  filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.7));
 }
-.book-3d:hover {
-  transform: perspective(900px) rotateY(-5deg);
+.book-3d-wrap:hover {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(1deg);
+}
+
+.book-3d-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  background: linear-gradient(180deg, #8b0000 0%, #c0392b 30%, #8b0000 100%);
+  transform-origin: right center;
+  transform: translateX(-100%) rotateY(-90deg);
+  backface-visibility: hidden;
+  border-radius: 2px 0 0 2px;
+}
+
+.book-3d {
+  position: relative;
+  border-radius: 0 4px 4px 0;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .book-3d-img {
   display: block;
-  width: 280px;
+  width: 260px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   max-width: none;
 }
 
