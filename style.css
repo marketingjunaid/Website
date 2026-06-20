@@ -13,9 +13,9 @@
   --surface:   #1c1c1c;
   --surface-2: #222222;
   --border:    #2a2a2a;
-  --accent:    #00bcd4;
-  --accent-dk: #008fa1;
-  --accent-lt: #4dd9ec;
+  --accent:    #c9a97a;
+  --accent-dk: #a07848;
+  --accent-lt: #e0c9a0;
   --text:      #e8e8e8;
   --text-muted:#8a8a8a;
   --text-dim:  #555555;
@@ -235,8 +235,8 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0,188,212,0.08);
-  border: 1px solid rgba(0,188,212,0.25);
+  background: rgba(201,169,122,0.08);
+  border: 1px solid rgba(201,169,122,0.25);
   border-radius: 50px;
   padding: 0.4rem 1.1rem;
   font-size: 0.78rem;
@@ -437,7 +437,7 @@ ul { list-style: none; }
   border-color: var(--accent-lt);
   color: #000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,188,212,0.3);
+  box-shadow: 0 6px 20px rgba(201,169,122,0.3);
 }
 
 .btn-outline {
@@ -555,7 +555,7 @@ ul { list-style: none; }
   transition: all var(--transition);
 }
 .tag:hover {
-  background: rgba(0,188,212,0.1);
+  background: rgba(201,169,122,0.1);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -626,7 +626,7 @@ ul { list-style: none; }
   height: 14px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(0,188,212,0.15), 0 0 0 8px rgba(0,188,212,0.05);
+  box-shadow: 0 0 0 4px rgba(201,169,122,0.15), 0 0 0 8px rgba(201,169,122,0.05);
   flex-shrink: 0;
 }
 
@@ -712,7 +712,7 @@ ul { list-style: none; }
 }
 .tool-badge:hover {
   border-color: var(--accent);
-  background: rgba(0,188,212,0.05);
+  background: rgba(201,169,122,0.05);
   transform: translateY(-3px);
 }
 
@@ -749,7 +749,7 @@ ul { list-style: none; }
 .portfolio-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,188,212,0.1);
+  box-shadow: 0 12px 32px rgba(201,169,122,0.1);
 }
 
 .portfolio-card-inner {
@@ -764,8 +764,8 @@ ul { list-style: none; }
   width: 52px;
   height: 52px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(0,188,212,0.2), rgba(0,188,212,0.05));
-  border: 1.5px solid rgba(0,188,212,0.3);
+  background: linear-gradient(135deg, rgba(201,169,122,0.2), rgba(201,169,122,0.05));
+  border: 1.5px solid rgba(201,169,122,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -826,7 +826,7 @@ ul { list-style: none; }
 }
 
 .cert-card--edu {
-  border-color: rgba(0,188,212,0.2);
+  border-color: rgba(201,169,122,0.2);
 }
 
 .cert-badge {
@@ -1001,7 +1001,7 @@ ul { list-style: none; }
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0,188,212,0.1);
+  box-shadow: 0 0 0 3px rgba(201,169,122,0.1);
 }
 
 .form-group textarea {
@@ -1015,8 +1015,8 @@ ul { list-style: none; }
 
 .form-success {
   display: none;
-  background: rgba(0,188,212,0.08);
-  border: 1px solid rgba(0,188,212,0.3);
+  background: rgba(201,169,122,0.08);
+  border: 1px solid rgba(201,169,122,0.3);
   border-radius: var(--radius-lg);
   padding: 2rem;
   text-align: center;

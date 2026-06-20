@@ -9,7 +9,7 @@
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const ACCENT = '0,188,212';
+  const ACCENT = '201,169,122';
   let W, H, particles, mouse = { x: -9999, y: -9999 };
   const COUNT = 90, CONNECT_DIST = 140, MOUSE_DIST = 120;
 
