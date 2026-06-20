@@ -99,6 +99,64 @@ ul { list-style: none; }
   background: var(--bg-alt);
 }
 
+.section-light {
+  background: #f5f0e8;
+  --text:      #1a1a1a;
+  --text-muted:#555555;
+  --text-dim:  #999999;
+  --surface:   #ffffff;
+  --surface-2: #ece8e0;
+  --border:    #ddd8ce;
+  --white:     #1a1a1a;
+  color: #1a1a1a;
+}
+.section-light .section-title { color: #1a1a1a; }
+.section-light .section-sub   { color: #666666; }
+.section-light .section-label { color: var(--accent-dk); }
+.section-light .tag {
+  background: #fff;
+  border-color: #ddd8ce;
+  color: #444;
+}
+.section-light .tag:hover {
+  background: rgba(160,120,72,0.08);
+  border-color: var(--accent-dk);
+  color: var(--accent-dk);
+}
+.section-light .stat-card {
+  background: #fff;
+  border-color: #ddd8ce;
+}
+.section-light .stat-number { color: var(--accent-dk); }
+.section-light .stat-label  { color: #444; }
+.section-light .portfolio-card {
+  background: #fff;
+  border-color: #ddd8ce;
+}
+.section-light .portfolio-card:hover {
+  border-color: var(--accent-dk);
+  box-shadow: 0 12px 32px rgba(160,120,72,0.12);
+}
+.section-light .portfolio-initials {
+  background: linear-gradient(135deg, rgba(160,120,72,0.15), rgba(160,120,72,0.04));
+  border-color: rgba(160,120,72,0.3);
+  color: var(--accent-dk);
+}
+.section-light .portfolio-info h3 { color: #1a1a1a; }
+.section-light .industry-tag {
+  background: #ece8e0;
+  border-color: #ddd8ce;
+  color: #666;
+}
+.section-light .portfolio-more { color: #888; }
+.section-light .cert-card {
+  background: #fff;
+  border-color: #ddd8ce;
+}
+.section-light .cert-name   { color: #1a1a1a; }
+.section-light .cert-issuer { color: #888; }
+.section-light .skills-col-title { color: #1a1a1a; }
+
 /* =============================================
    SCROLL ANIMATIONS
    ============================================= */
