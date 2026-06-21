@@ -866,64 +866,21 @@ ul { list-style: none; }
 
 .jb-banner {
   position: relative;
-  height: 110px;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  line-height: 0;
 }
 
-.jb-banner-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1a1208 0%, #2e1f08 40%, #4a2e0a 70%, #c9a97a22 100%);
+.jb-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.jb-banner-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,169,122,0.18) 0%, transparent 70%),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 18px,
-      rgba(201,169,122,0.04) 18px,
-      rgba(201,169,122,0.04) 19px
-    );
-}
-
-.jb-banner-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0 1.5rem;
-}
-
-.jb-monogram {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #c9a97a, #a07848);
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
-  flex-shrink: 0;
-}
-
-.jb-domain {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(201,169,122,0.85);
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+.portfolio-card--jb:hover .jb-cover-img {
+  transform: scale(1.03);
 }
 
 .portfolio-card--jb .portfolio-card-inner {
