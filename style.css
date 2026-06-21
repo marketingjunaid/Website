@@ -859,6 +859,154 @@ ul { list-style: none; }
   font-style: italic;
 }
 
+/* ---- James Bustar featured card ---- */
+.portfolio-card--jb {
+  grid-column: span 1;
+}
+
+.jb-banner {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.jb-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1208 0%, #2e1f08 40%, #4a2e0a 70%, #c9a97a22 100%);
+}
+
+.jb-banner-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,169,122,0.18) 0%, transparent 70%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(201,169,122,0.04) 18px,
+      rgba(201,169,122,0.04) 19px
+    );
+}
+
+.jb-banner-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+}
+
+.jb-monogram {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c9a97a, #a07848);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+.jb-domain {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(201,169,122,0.85);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.portfolio-card--jb .portfolio-card-inner {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jb-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.jb-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0;
+}
+
+.jb-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.jb-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.jb-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  background: rgba(201,169,122,0.1);
+  border: 1px solid rgba(201,169,122,0.25);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.btn-small--live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1.5px solid rgba(201,169,122,0.4);
+  border-radius: 50px;
+  padding: 0.35rem 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: fit-content;
+}
+.btn-small--live:hover {
+  background: rgba(201,169,122,0.1);
+  border-color: var(--accent);
+}
+
+/* Light section overrides for JB card */
+.section-light .jb-name { color: #1a1a1a; }
+.section-light .jb-desc { color: #666; }
+.section-light .jb-tag {
+  background: rgba(160,120,72,0.08);
+  border-color: rgba(160,120,72,0.2);
+  color: var(--accent-dk);
+}
+.section-light .btn-small--live {
+  color: var(--accent-dk);
+  border-color: rgba(160,120,72,0.35);
+}
+.section-light .btn-small--live:hover {
+  background: rgba(160,120,72,0.08);
+  border-color: var(--accent-dk);
+}
+
 /* =============================================
    CERTIFICATIONS
    ============================================= */
