@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Terminator Portrait Generator | Junaid Ashraf</title>
+  <meta name="description" content="Turn yourself into a Terminator using Gemini AI. Free prompt included." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ---- Page-specific overrides ---- */
+    body { background: #0a0a0a; }
+
+    .term-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding-bottom: 4rem;
+    }
+
+    .term-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.6);
+    }
+
+    .term-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0.15) 40%,
+        rgba(0,0,0,0.85) 80%,
+        rgba(10,10,10,1) 100%
+      );
+    }
+
+    .term-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+      padding: 0 1.5rem;
+    }
+
+    .term-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(220,38,38,0.12);
+      border: 1px solid rgba(220,38,38,0.4);
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #f87171;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .term-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse-red 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+      50%       { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+    }
+
+    .term-title {
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .term-title span {
+      color: #ef4444;
+      text-shadow: 0 0 32px rgba(239,68,68,0.6);
+    }
+
+    .term-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .term-scroll-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .term-scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* ---- Instructions Section ---- */
+    .term-instructions {
+      background: #0a0a0a;
+      padding: 5rem 0 6rem;
+    }
+
+    .term-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .step-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ef4444;
+      margin-bottom: 0.75rem;
+    }
+
+    .term-section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .term-section-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 14px;
+      padding: 1.4rem 1.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .step-card:hover {
+      border-color: rgba(239,68,68,0.3);
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(239,68,68,0.1);
+      border: 1.5px solid rgba(239,68,68,0.35);
+      color: #ef4444;
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-body p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .step-body a {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      background: #0f0f0f;
+      border: 1px solid #222;
+      border-left: 3px solid #ef4444;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .prompt-box-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ef4444;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .prompt-box-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #1e1e1e;
+    }
+
+    .prompt-text {
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Segoe UI', sans-serif;
+      white-space: pre-wrap;
+    }
+
+    .prompt-text .highlight {
+      color: #fca5a5;
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      margin-top: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(239,68,68,0.1);
+      border: 1.5px solid rgba(239,68,68,0.35);
+      border-radius: 50px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #f87171;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .copy-btn:hover {
+      background: rgba(239,68,68,0.18);
+      border-color: #ef4444;
+      color: #fff;
+    }
+
+    .copy-btn.copied {
+      background: rgba(34,197,94,0.1);
+      border-color: rgba(34,197,94,0.4);
+      color: #86efac;
+    }
+
+    /* Result note */
+    .result-note {
+      background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(239,68,68,0.02));
+      border: 1px solid rgba(239,68,68,0.15);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .result-note-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 0.1rem;
+    }
+
+    .result-note p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .result-note strong {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 600px) {
+      .term-hero { min-height: 100svh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Junaid Ashraf</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="term-hero">
+    <img src="terminator-example.jpg" alt="AI Terminator Portrait Example" class="term-hero-img"/>
+    <div class="term-hero-overlay"></div>
+    <div class="term-hero-content">
+      <div class="term-badge">AI Image Generator</div>
+      <h1 class="term-title">Turn Yourself Into a<br><span>Terminator</span></h1>
+      <p class="term-sub">Using Gemini AI, you can create a cinematic, hyper-realistic Terminator portrait of yourself in under a minute — for free.</p>
+      <div class="term-scroll-hint">How it works</div>
+    </div>
+  </section>
+
+  <!-- ===== INSTRUCTIONS ===== -->
+  <section class="term-instructions">
+    <div class="term-container">
+
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+      <div class="step-label">Step by Step</div>
+      <h2 class="term-section-title">How to Create Yours</h2>
+      <p class="term-section-sub">Follow these three steps. No design skills needed — Gemini does all the heavy lifting. The result above is an example of the output.</p>
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Open Google Gemini</h3>
+            <p>Go to <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> and sign in with your Google account. Make sure you're using <strong>Gemini 2.0 Flash</strong> or above for best image results.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Upload Your Photo</h3>
+            <p>Click the image/attachment icon in the chat and upload a clear, front-facing photo of yourself — ideally with good lighting and your face fully visible.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Paste the Prompt Below</h3>
+            <p>Copy the full prompt and paste it into Gemini alongside your photo. Hit send and wait for the magic. You can regenerate if you want a different variation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompt -->
+      <div class="prompt-box">
+        <div class="prompt-box-label">Full Prompt — Copy &amp; Paste into Gemini</div>
+        <div class="prompt-text" id="promptText">A cinematic, somber, medium-length portrait in the iconic Terminator style. The subject is a robust male figure, with half of his face (right side) revealing a cybernetic structure of metal and wires, with a glowing red mechanical eye. The other half of his face (left side) is human, with a serious, determined expression, furrowed brows, and a thin beard.
+
+He wears a worn black leather jacket over a dark T-shirt.
+
+His hair is short, dark, and slicked back.
+
+The background is dark and smoky, with a mysterious and menacing atmosphere, enhanced by subtle smoke or fog. The lighting is dramatic and low-key, with sidelights highlighting the leather texture and metallic details of the cybernetic face, and a red light emanating from the mechanical eye.
+
+Camera Settings: Captured with a portrait lens (e.g., 85mm f/1.4) on a full-frame camera for a sharp close-up with flattering compression. Aperture adjusted between f/2.0 and f/2.8 for a shallow depth of field, focusing on the face and blurring the background. ISO 400-800 for low light. Shutter speed from 1/125s to 1/250s. Studio lighting controlled with sidelights and backlighting (rim light) to create a dramatic effect and highlight the red eye.
+
+<span class="highlight">Instructions for the "nano banana":</span>
+
+"Please use the user's reference image to capture and apply all their facial features, facial structure, eye color, hair and beard style, and skin tone with maximum fidelity. The goal is to create a Terminator-like version of the user. The clothing (black leather jacket), the cybernetic part of the face with the red eye, the serious expression, the dramatic lighting, and the dark, smoky background should be generated as described, creating a perfect fusion between the user's identity and the aesthetics of the image."</div>
+        <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">⧉ Copy Prompt</button>
+      </div>
+
+      <div class="result-note">
+        <div class="result-note-icon">⚡</div>
+        <p><strong>Pro tip:</strong> If the result doesn't look quite like you, try uploading a clearer or better-lit photo and regenerate. You can also tweak the prompt — change "thin beard" to match your actual beard style, or adjust clothing. The example portrait at the top of this page was created using this exact prompt.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function copyPrompt() {
+      const text = document.getElementById('promptText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '⧉ Copy Prompt';
+          btn.classList.remove('copied');
+        }, 2500);
+      });
+    }
+  </script>
+
+</body>
+</html>
