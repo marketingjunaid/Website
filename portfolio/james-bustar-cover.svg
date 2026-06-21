@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f0b06"/>
+      <stop offset="50%"  stop-color="#1a1108"/>
+      <stop offset="100%" stop-color="#2a1a08"/>
+    </linearGradient>
+
+    <!-- Gold gradient for monogram -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#e8c97a"/>
+      <stop offset="50%"  stop-color="#c9a97a"/>
+      <stop offset="100%" stop-color="#a07848"/>
+    </linearGradient>
+
+    <!-- Shimmer line gradient -->
+    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#c9a97a" stop-opacity="0.6"/>
+      <stop offset="70%"  stop-color="#c9a97a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Radial glow -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Monogram shadow -->
+    <filter id="monogram-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#c9a97a" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Clip path -->
+    <clipPath id="card-clip">
+      <rect width="600" height="340" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card-clip)">
+    <!-- Base background -->
+    <rect width="600" height="340" fill="url(#bg)"/>
+
+    <!-- Diagonal grid lines (subtle texture) -->
+    <g opacity="0.06" stroke="#c9a97a" stroke-width="0.8">
+      <line x1="-100" y1="0"   x2="500"  y2="600"/>
+      <line x1="-20"  y1="0"   x2="580"  y2="600"/>
+      <line x1="60"   y1="0"   x2="660"  y2="600"/>
+      <line x1="140"  y1="0"   x2="740"  y2="600"/>
+      <line x1="220"  y1="0"   x2="820"  y2="600"/>
+      <line x1="300"  y1="0"   x2="900"  y2="600"/>
+      <line x1="380"  y1="0"   x2="980"  y2="600"/>
+    </g>
+
+    <!-- Centre glow -->
+    <ellipse cx="300" cy="170" rx="260" ry="160" fill="url(#glow)"/>
+
+    <!-- Top accent bar -->
+    <rect x="0" y="0" width="600" height="3" fill="url(#line)"/>
+
+    <!-- Decorative corner bracket — top left -->
+    <g stroke="#c9a97a" stroke-width="1.5" fill="none" opacity="0.4">
+      <path d="M 28 28 L 28 56"/>
+      <path d="M 28 28 L 56 28"/>
+    </g>
+
+    <!-- Decorative corner bracket — bottom right -->
+    <g stroke="#c9a97a" stroke-width="1.5" fill="none" opacity="0.4">
+      <path d="M 572 312 L 572 284"/>
+      <path d="M 572 312 L 544 312"/>
+    </g>
+
+    <!-- Large faint "JB" watermark in background -->
+    <text x="300" y="220" font-family="Georgia, serif" font-size="260" font-weight="700"
+          text-anchor="middle" fill="#c9a97a" opacity="0.03" letter-spacing="-10">JB</text>
+
+    <!-- Monogram badge -->
+    <rect x="232" y="58" width="136" height="136" rx="20"
+          fill="url(#gold)" filter="url(#monogram-shadow)" opacity="0.92"/>
+    <!-- Inner border on badge -->
+    <rect x="236" y="62" width="128" height="128" rx="17"
+          fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <!-- JB letters -->
+    <text x="300" y="152" font-family="Georgia, 'Times New Roman', serif"
+          font-size="62" font-weight="700" text-anchor="middle"
+          fill="#1a1108" letter-spacing="2">JB</text>
+
+    <!-- Horizontal divider line -->
+    <rect x="160" y="218" width="280" height="1" fill="url(#line)" opacity="0.6"/>
+
+    <!-- Name -->
+    <text x="300" y="252" font-family="'Segoe UI', Arial, sans-serif"
+          font-size="28" font-weight="700" text-anchor="middle"
+          fill="#f0e0c0" letter-spacing="3">JAMES BUSTAR</text>
+
+    <!-- Tagline -->
+    <text x="300" y="278" font-family="'Segoe UI', Arial, sans-serif"
+          font-size="12" font-weight="400" text-anchor="middle"
+          fill="#c9a97a" letter-spacing="5" opacity="0.85">BUSINESS CONSULTING</text>
+
+    <!-- Bottom accent bar -->
+    <rect x="0" y="337" width="600" height="3" fill="url(#line)"/>
+  </g>
+</svg>
