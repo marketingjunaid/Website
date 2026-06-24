@@ -342,8 +342,7 @@ ul { list-style: none; }
 }
 
 .accent-line {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--accent);
+  color: var(--accent);
 }
 
 @keyframes slideUp {
@@ -466,7 +465,7 @@ ul { list-style: none; }
 @media (max-width: 680px) {
   .hero-stats { gap: 1.25rem; }
   .hero-stat-num { font-size: 1.4rem; }
-  .accent-line { -webkit-text-stroke-width: 1.5px; }
+  .accent-line { color: var(--accent); }
 }
 
 /* =============================================
