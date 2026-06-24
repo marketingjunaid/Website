@@ -918,6 +918,23 @@ ul { list-style: none; }
   margin: 0;
 }
 
+.jb-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.3px;
+  margin: -0.35rem 0 0;
+}
+.jb-country svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.section-light .jb-country { color: var(--accent-dk); }
+
 .jb-desc {
   font-size: 0.82rem;
   line-height: 1.6;
