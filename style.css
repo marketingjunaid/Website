@@ -786,14 +786,13 @@ ul { list-style: none; }
   width: 28px;
   height: 28px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
-  transition: opacity 0.2s;
+  opacity: 0.9;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .tool-badge:hover .tool-icon img {
   opacity: 1;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
+  transform: scale(1.1);
 }
 
 .tool-badge span {
