@@ -34,7 +34,6 @@
       this.vx -= dx * force;
       this.vy -= dy * force;
     }
-    this.vx *= 0.98; this.vy *= 0.98;
     this.x += this.vx; this.y += this.vy;
     if (this.x < 0) this.x = W; if (this.x > W) this.x = 0;
     if (this.y < 0) this.y = H; if (this.y > H) this.y = 0;
@@ -77,6 +76,12 @@
     mouse.y = e.clientY - rect.top;
   });
   window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  window.addEventListener('touchmove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.touches[0].clientX - rect.left;
+    mouse.y = e.touches[0].clientY - rect.top;
+  }, { passive: true });
+  window.addEventListener('touchend', () => { mouse.x = -9999; mouse.y = -9999; });
 
   init();
   draw();
