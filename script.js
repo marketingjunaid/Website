@@ -92,15 +92,6 @@
   window.addEventListener('resize', resize);
   window.addEventListener('mousemove', e => setMouse(e.clientX, e.clientY));
   window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
-  window.addEventListener('touchstart', e => {
-    setMouse(e.touches[0].clientX, e.touches[0].clientY);
-  }, { passive: true });
-  window.addEventListener('touchmove', e => {
-    setMouse(e.touches[0].clientX, e.touches[0].clientY);
-  }, { passive: true });
-  window.addEventListener('touchend', () => {
-    setTimeout(() => { mouse.x = -9999; mouse.y = -9999; }, 300);
-  });
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
