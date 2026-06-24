@@ -61,8 +61,8 @@
   let lastTime = null;
 
   function draw(ts) {
-    if (!lastTime) lastTime = ts;
-    const dt = Math.min((ts - lastTime) / 16.67, 3); // normalize to 60fps
+    if (!lastTime) { lastTime = ts; requestAnimationFrame(draw); return; }
+    const dt = Math.min((ts - lastTime) / 16.67, 1.5); // normalize to 60fps, cap bursts
     lastTime = ts;
 
     ctx.clearRect(0, 0, W, H);
@@ -103,12 +103,12 @@
     if (document.hidden) {
       if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     } else {
-      if (!rafId) { lastTime = null; draw(performance.now()); }
+      if (!rafId) { lastTime = null; rafId = requestAnimationFrame(draw); }
     }
   });
 
   init();
-  draw();
+  rafId = requestAnimationFrame(draw);
 })();
 
 /* ---- Typing Animation ---- */
