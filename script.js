@@ -21,8 +21,10 @@
   function Particle() {
     this.x  = Math.random() * W;
     this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 1.2;
-    this.vy = (Math.random() - 0.5) * 1.2;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    if (Math.abs(this.vx) < 0.15) this.vx = this.vx < 0 ? -0.15 : 0.15;
+    if (Math.abs(this.vy) < 0.15) this.vy = this.vy < 0 ? -0.15 : 0.15;
     this.r  = Math.random() * 1.5 + 0.8;
   }
 
