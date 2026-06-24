@@ -1,13 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
   <rect width="40" height="40" rx="9" fill="white"/>
-  <!-- Google G logo accurate version -->
-  <!-- Red arc (top-left) -->
-  <path d="M20 7 C13 7 8 12 8 20" stroke="#EA4335" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <!-- Yellow arc (bottom-left) -->
-  <path d="M8 20 C8 28 13 33 20 33" stroke="#FBBC05" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <!-- Green arc (bottom-right) -->
-  <path d="M20 33 C27 33 32 28 32 20" stroke="#34A853" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <!-- Blue part (right + horizontal bar) -->
-  <path d="M32 20 L20 20" stroke="#4285F4" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <path d="M32 20 C32 14 28 9 22 7.5" stroke="#4285F4" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <!-- Accurate Google G logo -->
+  <path d="M20.5 10.5h9.5v3h-6v3h5.5v3H24v3h6v3h-9.5c-5.25 0-9.5-4.25-9.5-9.5s4.25-9.5 9.5-9.5c2.6 0 4.96 1.05 6.67 2.75l-2.12 2.12A6.47 6.47 0 0020.5 10.5z" fill="#EA4335"/>
+  <path d="M11 20.5c0 1.86.5 3.6 1.38 5.1L9.26 28.72A12.47 12.47 0 018 20.5c0-2.88.97-5.53 2.58-7.64l3.14 3.14A6.47 6.47 0 0011 20.5z" fill="#FBBC05"/>
+  <path d="M20.5 27c1.8 0 3.43-.62 4.72-1.64l3.13 3.13A9.47 9.47 0 0120.5 31c-3.7 0-6.94-2.12-8.58-5.24l3.14-3.14A6.48 6.48 0 0020.5 27z" fill="#34A853"/>
+  <path d="M30 17.5h-9.5V14h9.5v3.5z" fill="#4285F4"/>
 </svg>
