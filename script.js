@@ -11,6 +11,7 @@
   const ctx = canvas.getContext('2d');
   const ACCENT = '201,169,122';
   let W, H, particles, mouse = { x: -9999, y: -9999 };
+  let rafId = null;
   const COUNT = 90, CONNECT_DIST = 140, MOUSE_DIST = 120;
 
   function resize() {
@@ -19,22 +20,33 @@
   }
 
   function Particle() {
+    this.reset();
+  }
+
+  Particle.prototype.reset = function() {
     this.x  = Math.random() * W;
     this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.5;
-    this.vy = (Math.random() - 0.5) * 0.5;
-    if (Math.abs(this.vx) < 0.15) this.vx = this.vx < 0 ? -0.15 : 0.15;
-    if (Math.abs(this.vy) < 0.15) this.vy = this.vy < 0 ? -0.15 : 0.15;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 0.3 + Math.random() * 0.25;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
     this.r  = Math.random() * 1.5 + 0.8;
-  }
+  };
 
   Particle.prototype.update = function() {
     const dx = mouse.x - this.x, dy = mouse.y - this.y;
     const dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist < MOUSE_DIST) {
-      const force = (MOUSE_DIST - dist) / MOUSE_DIST * 0.03;
-      this.vx -= dx * force;
-      this.vy -= dy * force;
+    if (dist < MOUSE_DIST && dist > 0) {
+      const force = (MOUSE_DIST - dist) / MOUSE_DIST * 0.06;
+      this.vx -= (dx / dist) * force;
+      this.vy -= (dy / dist) * force;
+      const spd = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+      if (spd > 2) { this.vx = this.vx/spd*2; this.vy = this.vy/spd*2; }
+    }
+    const spd = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+    if (spd > 0.1) {
+      this.vx = this.vx / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.1);
+      this.vy = this.vy / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.1);
     }
     this.x += this.vx; this.y += this.vy;
     if (this.x < 0) this.x = W; if (this.x > W) this.x = 0;
@@ -68,22 +80,35 @@
         }
       }
     }
-    requestAnimationFrame(draw);
+    rafId = requestAnimationFrame(draw);
   }
 
-  window.addEventListener('resize', () => { resize(); });
-  window.addEventListener('mousemove', e => {
+  function setMouse(clientX, clientY) {
     const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
+    mouse.x = clientX - rect.left;
+    mouse.y = clientY - rect.top;
+  }
+
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => setMouse(e.clientX, e.clientY));
   window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
-  window.addEventListener('touchmove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.touches[0].clientX - rect.left;
-    mouse.y = e.touches[0].clientY - rect.top;
+  window.addEventListener('touchstart', e => {
+    setMouse(e.touches[0].clientX, e.touches[0].clientY);
   }, { passive: true });
-  window.addEventListener('touchend', () => { mouse.x = -9999; mouse.y = -9999; });
+  window.addEventListener('touchmove', e => {
+    setMouse(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+  window.addEventListener('touchend', () => {
+    setTimeout(() => { mouse.x = -9999; mouse.y = -9999; }, 300);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    } else {
+      if (!rafId) draw();
+    }
+  });
 
   init();
   draw();
