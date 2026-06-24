@@ -33,22 +33,22 @@
     this.r  = Math.random() * 1.5 + 0.8;
   };
 
-  Particle.prototype.update = function() {
+  Particle.prototype.update = function(dt) {
     const dx = mouse.x - this.x, dy = mouse.y - this.y;
     const dist = Math.sqrt(dx*dx + dy*dy);
     if (dist < MOUSE_DIST && dist > 0) {
       const force = (MOUSE_DIST - dist) / MOUSE_DIST * 0.06;
-      this.vx -= (dx / dist) * force;
-      this.vy -= (dy / dist) * force;
+      this.vx -= (dx / dist) * force * dt;
+      this.vy -= (dy / dist) * force * dt;
       const spd = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
       if (spd > 2) { this.vx = this.vx/spd*2; this.vy = this.vy/spd*2; }
     }
     const spd = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
     if (spd > 0.1) {
-      this.vx = this.vx / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.1);
-      this.vy = this.vy / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.1);
+      this.vx = this.vx / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.05);
+      this.vy = this.vy / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.05);
     }
-    this.x += this.vx; this.y += this.vy;
+    this.x += this.vx * dt; this.y += this.vy * dt;
     if (this.x < 0) this.x = W; if (this.x > W) this.x = 0;
     if (this.y < 0) this.y = H; if (this.y > H) this.y = 0;
   };
@@ -58,10 +58,16 @@
     particles = Array.from({ length: COUNT }, () => new Particle());
   }
 
-  function draw() {
+  let lastTime = null;
+
+  function draw(ts) {
+    if (!lastTime) lastTime = ts;
+    const dt = Math.min((ts - lastTime) / 16.67, 3); // normalize to 60fps
+    lastTime = ts;
+
     ctx.clearRect(0, 0, W, H);
     for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
+      particles[i].update(dt);
       ctx.beginPath();
       ctx.arc(particles[i].x, particles[i].y, particles[i].r, 0, Math.PI*2);
       ctx.fillStyle = `rgba(${ACCENT},0.7)`;
@@ -97,7 +103,7 @@
     if (document.hidden) {
       if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     } else {
-      if (!rafId) draw();
+      if (!rafId) { lastTime = null; draw(performance.now()); }
     }
   });
 
