@@ -362,41 +362,30 @@
     <div class="container">
       <div class="section-label reveal">Credentials</div>
       <h2 class="section-title reveal">Certifications &amp; Education</h2>
-      <div class="certs-grid">
-
-        <div class="cert-card reveal">
-          <div class="cert-badge">
-            <span class="cert-logo">H</span>
+      <!-- Certificate Slider -->
+      <div class="cert-slider-wrap reveal">
+        <div class="cert-slider" id="certSlider">
+          <div class="cert-slide">
+            <img src="Inbound MArketing Certificate.png" alt="Inbound Marketing Certified – HubSpot Academy" class="cert-slide-img"/>
           </div>
-          <div class="cert-info">
-            <div class="cert-issuer">HubSpot Academy</div>
-            <div class="cert-name">Inbound Marketing Certified</div>
-            <div class="cert-valid">Valid: Jun 2024 – Jul 2026</div>
+          <div class="cert-slide">
+            <img src="seo certificate.png" alt="SEO Certified – HubSpot Academy" class="cert-slide-img"/>
           </div>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-badge">
-            <span class="cert-logo">H</span>
-          </div>
-          <div class="cert-info">
-            <div class="cert-issuer">HubSpot Academy</div>
-            <div class="cert-name">SEO Certified</div>
-            <div class="cert-valid">Valid: Jun 2024 – Jul 2025</div>
+          <div class="cert-slide">
+            <img src="social media certificate.png" alt="Social Media Certified – HubSpot Academy" class="cert-slide-img"/>
           </div>
         </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-badge">
-            <span class="cert-logo">H</span>
-          </div>
-          <div class="cert-info">
-            <div class="cert-issuer">HubSpot Academy</div>
-            <div class="cert-name">Social Media Certified</div>
-            <div class="cert-valid">Valid: Jun 2024 – Jul 2026</div>
-          </div>
+        <button class="cert-prev" id="certPrev" aria-label="Previous">&#8592;</button>
+        <button class="cert-next" id="certNext" aria-label="Next">&#8594;</button>
+        <div class="cert-dots" id="certDots">
+          <span class="cert-dot active"></span>
+          <span class="cert-dot"></span>
+          <span class="cert-dot"></span>
         </div>
+      </div>
 
+      <!-- Education card below slider -->
+      <div class="certs-grid" style="margin-top:1.5rem;">
         <div class="cert-card reveal cert-card--edu">
           <div class="cert-badge cert-badge--edu">
             <span class="cert-logo">N</span>
@@ -406,7 +395,6 @@
             <div class="cert-name">BS Software Engineering</div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
