@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="pj-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1a1410"/>
+      <stop offset="55%"  stop-color="#231c15"/>
+      <stop offset="100%" stop-color="#120f0a"/>
+    </linearGradient>
+    <linearGradient id="pj-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="60%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pj-mountain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#2a2118"/>
+      <stop offset="100%" stop-color="#1a1410"/>
+    </linearGradient>
+    <radialGradient id="pj-glow" cx="50%" cy="40%" r="45%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pj-text-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#c9a97a" flood-opacity="0.45"/>
+    </filter>
+    <filter id="pj-icon-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#c9a97a" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#pj-bg)"/>
+  <ellipse cx="300" cy="140" rx="260" ry="150" fill="url(#pj-glow)"/>
+
+  <!-- Mountain silhouette (Hindukush feel) -->
+  <g fill="url(#pj-mountain)" opacity="0.55">
+    <polygon points="0,200 60,120 120,160 180,90 240,140 300,70 360,130 420,85 480,150 540,100 600,140 600,210 0,210"/>
+  </g>
+  <!-- Snow caps -->
+  <g fill="#ffffff" opacity="0.08">
+    <polygon points="300,70 285,95 315,95"/>
+    <polygon points="420,85 408,106 432,106"/>
+    <polygon points="180,90 170,108 190,108"/>
+  </g>
+
+  <!-- Jacket icon (stylized Nehru collar silhouette) -->
+  <g transform="translate(300,128)" filter="url(#pj-icon-glow)">
+    <!-- Jacket body -->
+    <path d="M-28,40 L-36,-10 L-20,-30 L-8,-18 L0,-22 L8,-18 L20,-30 L36,-10 L28,40 Z"
+          fill="#c9a97a" opacity="0.85"/>
+    <!-- Nehru collar (mandarin) -->
+    <path d="M-8,-18 L-6,-30 L-2,-36 L2,-36 L6,-30 L8,-18 L0,-22 Z"
+          fill="#b8915f" opacity="0.9"/>
+    <!-- Lapel lines -->
+    <line x1="-20" y1="-26" x2="-4" y2="8" stroke="#1a1410" stroke-width="1.5" opacity="0.5"/>
+    <line x1="20" y1="-26" x2="4" y2="8" stroke="#1a1410" stroke-width="1.5" opacity="0.5"/>
+    <!-- Button line -->
+    <line x1="0" y1="-10" x2="0" y2="36" stroke="#1a1410" stroke-width="1" opacity="0.4"/>
+    <circle cx="0" cy="2"  r="2" fill="#1a1410" opacity="0.5"/>
+    <circle cx="0" cy="14" r="2" fill="#1a1410" opacity="0.5"/>
+    <circle cx="0" cy="26" r="2" fill="#1a1410" opacity="0.5"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="300" y="210" font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle"
+        letter-spacing="3" filter="url(#pj-text-glow)">PESHAWAR</text>
+  <text x="300" y="232" font-family="Georgia, 'Times New Roman', serif"
+        font-size="14" font-weight="400" fill="#c9a97a" text-anchor="middle"
+        letter-spacing="6">JACKETS</text>
+
+  <!-- Tagline -->
+  <text x="300" y="252" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="10" font-weight="400" fill="rgba(255,255,255,0.4)" text-anchor="middle"
+        letter-spacing="1" font-style="italic">Hand-tailored · Hindukush Wool · Chitral, Pakistan</text>
+
+  <!-- Divider -->
+  <rect x="120" y="263" width="360" height="1" fill="url(#pj-shimmer)" opacity="0.5"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="600" height="50" fill="rgba(12,9,6,0.95)"/>
+  <rect x="0" y="290" width="600" height="1" fill="url(#pj-shimmer)" opacity="0.5"/>
+
+  <!-- Chips -->
+  <rect x="28" y="305" width="90" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="73" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Branding</text>
+
+  <rect x="128" y="305" width="110" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="183" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Shopify Store</text>
+
+  <rect x="248" y="305" width="104" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="300" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">E-commerce</text>
+
+  <rect x="362" y="305" width="94" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="409" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Fashion</text>
+
+  <rect x="466" y="305" width="108" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="520" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Handcrafted</text>
+
+  <!-- Top accent -->
+  <rect x="0" y="0" width="600" height="2" fill="url(#pj-shimmer)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#c9a97a" stroke-width="1.2" fill="none" opacity="0.4">
+    <path d="M 18 18 L 18 36"/><path d="M 18 18 L 36 18"/>
+    <path d="M 582 288 L 582 270"/><path d="M 582 288 L 564 288"/>
+  </g>
+</svg>
