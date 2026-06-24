@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="ck-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1c1008"/>
+      <stop offset="55%"  stop-color="#251608"/>
+      <stop offset="100%" stop-color="#140c04"/>
+    </linearGradient>
+    <linearGradient id="ck-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#d4a043" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#d4a043" stop-opacity="0.75"/>
+      <stop offset="60%"  stop-color="#d4a043" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#d4a043" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ck-glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%"   stop-color="#d4a043" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#d4a043" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ck-text-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#d4a043" flood-opacity="0.5"/>
+    </filter>
+    <filter id="ck-icon-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#d4a043" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#ck-bg)"/>
+  <ellipse cx="300" cy="150" rx="270" ry="155" fill="url(#ck-glow)"/>
+
+  <!-- Subtle texture lines -->
+  <g stroke="#d4a043" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60"  x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+  </g>
+
+  <!-- Tea cup icon -->
+  <g transform="translate(300,118)" filter="url(#ck-icon-glow)">
+    <!-- Saucer -->
+    <ellipse cx="0" cy="38" rx="38" ry="7" fill="#d4a043" opacity="0.5"/>
+    <!-- Cup body -->
+    <path d="M-28,0 Q-30,34 0,36 Q30,34 28,0 Z" fill="#d4a043" opacity="0.85"/>
+    <!-- Cup rim -->
+    <ellipse cx="0" cy="0" rx="28" ry="6" fill="#e8b55a" opacity="0.9"/>
+    <!-- Handle -->
+    <path d="M28,6 Q46,6 46,20 Q46,34 28,30" stroke="#d4a043" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <!-- Steam wisps -->
+    <path d="M-10,-10 Q-6,-22 -10,-34" stroke="#d4a043" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M0,-8  Q4,-22  0,-36"  stroke="#d4a043" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M10,-10 Q14,-22 10,-34" stroke="#d4a043" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <!-- Tea liquid inside -->
+    <ellipse cx="0" cy="6" rx="20" ry="4" fill="#8b5a1a" opacity="0.5"/>
+  </g>
+
+  <!-- Decorative frame -->
+  <rect x="140" y="60" width="320" height="210" rx="4" fill="none" stroke="#d4a043" stroke-width="0.6" stroke-opacity="0.18"/>
+  <rect x="148" y="68" width="304" height="194" rx="3" fill="none" stroke="#d4a043" stroke-width="0.4" stroke-opacity="0.1"/>
+
+  <!-- Brand name -->
+  <text x="300" y="206" font-family="Georgia, 'Times New Roman', serif"
+        font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle"
+        letter-spacing="2" filter="url(#ck-text-glow)">Chaaye Khana</text>
+
+  <!-- Urdu-inspired ornament dots -->
+  <g fill="#d4a043" opacity="0.6">
+    <circle cx="200" cy="206" r="2"/>
+    <circle cx="195" cy="206" r="1.2"/>
+    <circle cx="405" cy="206" r="2"/>
+    <circle cx="410" cy="206" r="1.2"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="300" y="228" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="10" font-weight="400" fill="rgba(212,160,67,0.75)" text-anchor="middle"
+        letter-spacing="1.5" font-style="italic">Authentic Tastes of Tradition</text>
+
+  <!-- Origin text -->
+  <text x="300" y="250" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="9.5" font-weight="400" fill="rgba(255,255,255,0.3)" text-anchor="middle"
+        letter-spacing="1">Pakistan</text>
+
+  <!-- Divider -->
+  <rect x="120" y="262" width="360" height="1" fill="url(#ck-shimmer)" opacity="0.5"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="600" height="50" fill="rgba(10,6,2,0.95)"/>
+  <rect x="0" y="290" width="600" height="1" fill="url(#ck-shimmer)" opacity="0.5"/>
+
+  <!-- Chips -->
+  <rect x="28" y="305" width="108" height="22" rx="11" fill="rgba(212,160,67,0.12)" stroke="#d4a043" stroke-width="0.8" opacity="0.85"/>
+  <text x="82" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#d4a043" letter-spacing="0.5">Web Development</text>
+
+  <rect x="146" y="305" width="106" height="22" rx="11" fill="rgba(212,160,67,0.12)" stroke="#d4a043" stroke-width="0.8" opacity="0.85"/>
+  <text x="199" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#d4a043" letter-spacing="0.5">Social Media</text>
+
+  <rect x="262" y="305" width="76" height="22" rx="11" fill="rgba(212,160,67,0.12)" stroke="#d4a043" stroke-width="0.8" opacity="0.85"/>
+  <text x="300" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#d4a043" letter-spacing="0.5">Tea House</text>
+
+  <rect x="348" y="305" width="90" height="22" rx="11" fill="rgba(212,160,67,0.12)" stroke="#d4a043" stroke-width="0.8" opacity="0.85"/>
+  <text x="393" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#d4a043" letter-spacing="0.5">F&amp;B Brand</text>
+
+  <rect x="448" y="305" width="124" height="22" rx="11" fill="rgba(212,160,67,0.12)" stroke="#d4a043" stroke-width="0.8" opacity="0.85"/>
+  <text x="510" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#d4a043" letter-spacing="0.5">Content Strategy</text>
+
+  <!-- Top accent -->
+  <rect x="0" y="0" width="600" height="2" fill="url(#ck-shimmer)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#d4a043" stroke-width="1.2" fill="none" opacity="0.4">
+    <path d="M 18 18 L 18 36"/><path d="M 18 18 L 36 18"/>
+    <path d="M 582 288 L 582 270"/><path d="M 582 288 L 564 288"/>
+  </g>
+</svg>
