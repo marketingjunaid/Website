@@ -1027,6 +1027,15 @@ ul { list-style: none; }
   color: var(--white);
 }
 
+.cert-valid {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.section-light .cert-valid { color: #aaa; }
+
 /* =============================================
    LEAD MAGNET
    ============================================= */
