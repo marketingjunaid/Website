@@ -783,10 +783,11 @@ ul { list-style: none; }
 }
 
 .tool-icon img {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  opacity: 0.9;
+  border-radius: 8px;
+  opacity: 0.95;
   transition: opacity 0.2s, transform 0.2s;
 }
 
