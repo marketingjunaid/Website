@@ -1,219 +1,120 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
   <defs>
-    <!-- Sky gradient matching Dubai dusk photo feel -->
-    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#0d1520"/>
-      <stop offset="45%"  stop-color="#1a2a3a"/>
-      <stop offset="100%" stop-color="#0a0f18"/>
+    <linearGradient id="cs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f1c2e"/>
+      <stop offset="55%"  stop-color="#162540"/>
+      <stop offset="100%" stop-color="#0a1220"/>
     </linearGradient>
-
-    <!-- Ground glow (city lights) -->
-    <radialGradient id="city-glow" cx="50%" cy="100%" r="60%">
-      <stop offset="0%"   stop-color="#f0c020" stop-opacity="0.18"/>
+    <linearGradient id="cs-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#f0c020" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#f0c020" stop-opacity="0.8"/>
+      <stop offset="60%"  stop-color="#f0c020" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f0c020" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cs-glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%"   stop-color="#f0c020" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#f0c020" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Gold shimmer line -->
-    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#f0c020" stop-opacity="0"/>
-      <stop offset="35%"  stop-color="#f0c020" stop-opacity="0.8"/>
-      <stop offset="65%"  stop-color="#f0c020" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#f0c020" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Starburst glow -->
-    <filter id="star-glow">
-      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#f0c020" flood-opacity="0.7"/>
+    <filter id="cs-icon-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f0c020" flood-opacity="0.5"/>
     </filter>
-    <filter id="text-glow">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f0c020" flood-opacity="0.3"/>
-    </filter>
-    <filter id="bldg-shadow">
-      <feDropShadow dx="0" dy="-2" stdDeviation="4" flood-color="#f0c020" flood-opacity="0.08"/>
+    <filter id="cs-text-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f0c020" flood-opacity="0.4"/>
     </filter>
   </defs>
 
-  <!-- Sky background -->
-  <rect width="600" height="340" fill="url(#sky)"/>
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#cs-bg)"/>
+  <ellipse cx="300" cy="155" rx="270" ry="160" fill="url(#cs-glow)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#f0c020" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60"  x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+  </g>
 
   <!-- Stars -->
-  <g fill="#ffffff" opacity="0.5">
+  <g fill="#ffffff" opacity="0.4">
     <circle cx="60"  cy="22" r="0.8"/>
-    <circle cx="130" cy="14" r="0.6"/>
-    <circle cx="200" cy="28" r="1"/>
-    <circle cx="280" cy="10" r="0.7"/>
-    <circle cx="340" cy="32" r="0.9"/>
-    <circle cx="420" cy="18" r="0.6"/>
-    <circle cx="490" cy="26" r="0.8"/>
-    <circle cx="550" cy="12" r="0.7"/>
+    <circle cx="150" cy="14" r="0.6"/>
+    <circle cx="420" cy="18" r="0.7"/>
+    <circle cx="540" cy="26" r="0.8"/>
     <circle cx="88"  cy="50" r="0.5"/>
-    <circle cx="460" cy="44" r="0.6"/>
-    <circle cx="370" cy="52" r="0.5"/>
+    <circle cx="480" cy="40" r="0.6"/>
   </g>
 
-  <!-- City lights glow on ground -->
-  <ellipse cx="300" cy="340" rx="320" ry="120" fill="url(#city-glow)"/>
-
-  <!-- ── DUBAI SKYLINE SILHOUETTE ── -->
-  <g fill="#0d1a28" filter="url(#bldg-shadow)">
-
-    <!-- Left cluster of buildings -->
-    <rect x="0"   y="230" width="22" height="110"/>
-    <rect x="18"  y="210" width="16" height="130"/>
-    <rect x="30"  y="240" width="20" height="100"/>
-    <rect x="46"  y="220" width="14" height="120"/>
-    <rect x="56"  y="235" width="18" height="105"/>
-    <rect x="70"  y="215" width="12" height="125"/>
-    <rect x="78"  y="228" width="20" height="112"/>
-
-    <!-- Mid-left buildings -->
-    <rect x="94"  y="200" width="18" height="140"/>
-    <rect x="108" y="218" width="22" height="122"/>
-    <rect x="126" y="195" width="16" height="145"/>
-    <!-- Antenna -->
-    <rect x="132" y="175" width="3"  height="22"/>
-
-    <!-- Burj Khalifa (centre-left, tallest) -->
-    <polygon points="175,80 180,80 190,240 166,240" fill="#0d1a28"/>
-    <!-- Taper sections -->
-    <polygon points="176,80 179,80 182,160 173,160" fill="#111f2e"/>
-    <rect x="174" y="76" width="7" height="8"/>
-    <!-- Spire -->
-    <rect x="177" y="40" width="2" height="40"/>
-
-    <!-- Buildings right of Burj -->
-    <rect x="196" y="185" width="20" height="155"/>
-    <rect x="212" y="200" width="16" height="140"/>
-    <!-- Twin curved top -->
-    <rect x="224" y="175" width="22" height="165"/>
-    <rect x="224" y="170" width="22" height="12" rx="11"/>
-    <rect x="242" y="190" width="18" height="150"/>
-
-    <!-- Centre buildings -->
-    <rect x="256" y="210" width="24" height="130"/>
-    <rect x="276" y="195" width="18" height="145"/>
-    <rect x="290" y="205" width="22" height="135"/>
-
-    <!-- Emirates towers style (right-centre) -->
-    <polygon points="318,130 325,130 338,250 305,250" fill="#0d1a28"/>
-    <rect x="320" y="126" width="4" height="8"/>
-    <rect x="319" y="120" width="6" height="10"/>
-    <!-- Spire -->
-    <rect x="321" y="90" width="2" height="34"/>
-
-    <rect x="340" y="195" width="18" height="145"/>
-    <rect x="354" y="210" width="24" height="130"/>
-
-    <!-- Second twin tower -->
-    <polygon points="378,155 385,155 396,255 367,255" fill="#0d1a28"/>
-    <rect x="381" y="146" width="2" height="14"/>
-
-    <!-- Right cluster -->
-    <rect x="398" y="200" width="20" height="140"/>
-    <rect x="414" y="215" width="16" height="125"/>
-    <rect x="426" y="195" width="24" height="145"/>
-    <rect x="426" y="190" width="24" height="10" rx="5"/>
-    <rect x="446" y="210" width="18" height="130"/>
-    <rect x="460" y="225" width="20" height="115"/>
-    <rect x="476" y="205" width="14" height="135"/>
-    <rect x="486" y="218" width="22" height="122"/>
-    <rect x="504" y="230" width="18" height="110"/>
-    <rect x="518" y="215" width="16" height="125"/>
-    <rect x="530" y="235" width="20" height="105"/>
-    <rect x="546" y="220" width="18" height="120"/>
-    <rect x="560" y="240" width="22" height="100"/>
-    <rect x="578" y="225" width="22" height="115"/>
+  <!-- Briefcase / Building icon centered -->
+  <g transform="translate(300,118)" filter="url(#cs-icon-glow)">
+    <!-- Building icon -->
+    <rect x="-28" y="-30" width="56" height="58" rx="3" fill="#f0c020" opacity="0.85"/>
+    <!-- Door -->
+    <rect x="-8" y="14" width="16" height="14" rx="2" fill="#0f1c2e"/>
+    <!-- Windows -->
+    <rect x="-22" y="-22" width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <rect x="-6"  y="-22" width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <rect x="10"  y="-22" width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <rect x="-22" y="-8"  width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <rect x="-6"  y="-8"  width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <rect x="10"  y="-8"  width="10" height="9" rx="1.5" fill="#0f1c2e" opacity="0.8"/>
+    <!-- Rooftop accent -->
+    <rect x="-18" y="-36" width="36" height="8" rx="2" fill="#f0c020" opacity="0.6"/>
+    <rect x="-6"  y="-44" width="12" height="10" rx="2" fill="#f0c020" opacity="0.5"/>
   </g>
 
-  <!-- Ground plane -->
-  <rect x="0" y="250" width="600" height="90" fill="#060d14" opacity="0.85"/>
+  <!-- Decorative frame -->
+  <rect x="140" y="60" width="320" height="210" rx="4" fill="none" stroke="#f0c020" stroke-width="0.6" stroke-opacity="0.18"/>
+  <rect x="148" y="68" width="304" height="194" rx="3" fill="none" stroke="#f0c020" stroke-width="0.4" stroke-opacity="0.1"/>
 
-  <!-- Reflection strip -->
-  <rect x="0" y="250" width="600" height="2" fill="url(#shimmer)" opacity="0.4"/>
+  <!-- Company name — CENTERED like other cards -->
+  <text x="300" y="208" font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle"
+        letter-spacing="2" filter="url(#cs-text-glow)">Consultiva Services</text>
 
-  <!-- Building window lights scattered -->
-  <g fill="#f0c020" opacity="0.35">
-    <rect x="97"  y="205" width="2" height="2"/>
-    <rect x="103" y="212" width="2" height="2"/>
-    <rect x="130" y="200" width="2" height="2"/>
-    <rect x="140" y="215" width="2" height="2"/>
-    <rect x="200" y="190" width="2" height="2"/>
-    <rect x="208" y="202" width="2" height="2"/>
-    <rect x="260" y="215" width="2" height="2"/>
-    <rect x="268" y="225" width="2" height="2"/>
-    <rect x="280" y="200" width="2" height="2"/>
-    <rect x="345" y="200" width="2" height="2"/>
-    <rect x="358" y="215" width="2" height="2"/>
-    <rect x="402" y="205" width="2" height="2"/>
-    <rect x="415" y="218" width="2" height="2"/>
-    <rect x="430" y="200" width="2" height="2"/>
-    <rect x="462" y="230" width="2" height="2"/>
-    <rect x="488" y="222" width="2" height="2"/>
-    <rect x="507" y="235" width="2" height="2"/>
+  <!-- Accent dots -->
+  <g fill="#f0c020" opacity="0.6">
+    <circle cx="200" cy="208" r="2"/>
+    <circle cx="195" cy="208" r="1.2"/>
+    <circle cx="405" cy="208" r="2"/>
+    <circle cx="410" cy="208" r="1.2"/>
   </g>
 
-  <!-- ── OVERLAY PANEL (top) ── -->
-  <rect x="0" y="0" width="600" height="110" fill="rgba(6,13,20,0.72)"/>
+  <!-- Tagline -->
+  <text x="300" y="230" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="10" font-weight="400" fill="rgba(240,192,32,0.75)" text-anchor="middle"
+        letter-spacing="1.5" font-style="italic">From Setup to Success — We've Got You Covered</text>
 
-  <!-- ── STARBURST LOGO ICON ── -->
-  <!-- 8 rays -->
-  <g transform="translate(42, 52)" filter="url(#star-glow)">
-    <g fill="#f0c020">
-      <!-- Rays at 45° intervals -->
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(0)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(45)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(90)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(135)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(180)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(225)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(270)"/>
-      <polygon points="0,-16 2.5,-6 -2.5,-6"  transform="rotate(315)"/>
-      <!-- Centre circle -->
-      <circle cx="0" cy="0" r="5"/>
-    </g>
-  </g>
+  <!-- Location -->
+  <text x="300" y="252" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="9.5" font-weight="400" fill="rgba(255,255,255,0.3)" text-anchor="middle"
+        letter-spacing="1">Business Consultancy · UAE</text>
 
-  <!-- ── COMPANY NAME ── -->
-  <text x="68" y="46" font-family="'Segoe UI', Arial, sans-serif"
-        font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1"
-        filter="url(#text-glow)">CONSULTIVA</text>
-  <text x="68" y="64" font-family="'Segoe UI', Arial, sans-serif"
-        font-size="10" font-weight="500" fill="#f0c020" letter-spacing="3">SERVICES</text>
+  <!-- Divider -->
+  <rect x="120" y="263" width="360" height="1" fill="url(#cs-shimmer)" opacity="0.5"/>
 
-  <!-- ── TAGLINE ── -->
-  <text x="42" y="92" font-family="'Segoe UI', Arial, sans-serif"
-        font-size="11" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="0.5"
-        font-style="italic">From Setup to Success — We've Got You Covered</text>
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="600" height="50" fill="rgba(6,13,20,0.95)"/>
+  <rect x="0" y="290" width="600" height="1" fill="url(#cs-shimmer)" opacity="0.5"/>
 
-  <!-- Gold divider line -->
-  <rect x="0" y="107" width="600" height="1.5" fill="url(#shimmer)"/>
-
-  <!-- ── SERVICE CHIPS (bottom bar) ── -->
-  <rect x="0" y="290" width="600" height="50" fill="rgba(6,13,20,0.9)"/>
-  <rect x="0" y="290" width="600" height="1" fill="url(#shimmer)"/>
-
-  <!-- Chip 1 -->
-  <rect x="28" y="305" width="112" height="22" rx="11" fill="rgba(240,192,32,0.15)" stroke="#f0c020" stroke-width="0.8" opacity="0.8"/>
+  <!-- Chips -->
+  <rect x="28" y="305" width="112" height="22" rx="11" fill="rgba(240,192,32,0.12)" stroke="#f0c020" stroke-width="0.8" opacity="0.85"/>
   <text x="84" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#f0c020" letter-spacing="0.5">Company Formation</text>
 
-  <!-- Chip 2 -->
-  <rect x="150" y="305" width="100" height="22" rx="11" fill="rgba(240,192,32,0.15)" stroke="#f0c020" stroke-width="0.8" opacity="0.8"/>
+  <rect x="150" y="305" width="100" height="22" rx="11" fill="rgba(240,192,32,0.12)" stroke="#f0c020" stroke-width="0.8" opacity="0.85"/>
   <text x="200" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#f0c020" letter-spacing="0.5">Banking Setup</text>
 
-  <!-- Chip 3 -->
-  <rect x="260" y="305" width="86" height="22" rx="11" fill="rgba(240,192,32,0.15)" stroke="#f0c020" stroke-width="0.8" opacity="0.8"/>
+  <rect x="260" y="305" width="86" height="22" rx="11" fill="rgba(240,192,32,0.12)" stroke="#f0c020" stroke-width="0.8" opacity="0.85"/>
   <text x="303" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#f0c020" letter-spacing="0.5">Licensing</text>
 
-  <!-- Chip 4 -->
-  <rect x="356" y="305" width="82" height="22" rx="11" fill="rgba(240,192,32,0.15)" stroke="#f0c020" stroke-width="0.8" opacity="0.8"/>
+  <rect x="356" y="305" width="82" height="22" rx="11" fill="rgba(240,192,32,0.12)" stroke="#f0c020" stroke-width="0.8" opacity="0.85"/>
   <text x="397" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#f0c020" letter-spacing="0.5">Branding</text>
 
-  <!-- Chip 5 -->
-  <rect x="448" y="305" width="126" height="22" rx="11" fill="rgba(240,192,32,0.15)" stroke="#f0c020" stroke-width="0.8" opacity="0.8"/>
+  <rect x="448" y="305" width="126" height="22" rx="11" fill="rgba(240,192,32,0.12)" stroke="#f0c020" stroke-width="0.8" opacity="0.85"/>
   <text x="511" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#f0c020" letter-spacing="0.5">20 Years Experience</text>
 
   <!-- Top accent -->
-  <rect x="0" y="0" width="600" height="2" fill="url(#shimmer)"/>
+  <rect x="0" y="0" width="600" height="2" fill="url(#cs-shimmer)"/>
 
   <!-- Corner brackets -->
   <g stroke="#f0c020" stroke-width="1.2" fill="none" opacity="0.4">
