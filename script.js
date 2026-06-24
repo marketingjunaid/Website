@@ -27,7 +27,7 @@
     this.x  = Math.random() * W;
     this.y  = Math.random() * H;
     const angle = Math.random() * Math.PI * 2;
-    const speed = 0.3 + Math.random() * 0.25;
+    const speed = 0.08 + Math.random() * 0.07;
     this.vx = Math.cos(angle) * speed;
     this.vy = Math.sin(angle) * speed;
     this.r  = Math.random() * 1.5 + 0.8;
@@ -45,8 +45,8 @@
     }
     const spd = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
     if (spd > 0.1) {
-      this.vx = this.vx / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.05);
-      this.vy = this.vy / spd * Math.max(spd * 0.995, 0.3 + Math.random() * 0.05);
+      this.vx = this.vx / spd * Math.max(spd * 0.995, 0.08);
+      this.vy = this.vy / spd * Math.max(spd * 0.995, 0.08);
     }
     this.x += this.vx * dt; this.y += this.vy * dt;
     if (this.x < 0) this.x = W; if (this.x > W) this.x = 0;
