@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
   <rect width="40" height="40" rx="9" fill="#7B68EE"/>
-  <!-- ClickUp logo: rainbow upward-pointing C mark -->
-  <path d="M8 26 C8 26 12 18 20 14 C28 18 32 26 32 26" stroke="#FF1D6C" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M11 22 C11 22 14.5 17 20 15 C25.5 17 29 22 29 22" stroke="#7B68EE" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M14 18 C14 18 17 15 20 14.5 C23 15 26 18 26 18" stroke="#00C2E0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g transform="translate(8,8) scale(1.0)">
+    <path d="M2 18.439l3.69-2.828c1.961 2.56 4.044 3.739 6.363 3.739 2.307 0 4.33-1.166 6.203-3.704L22 18.405C19.298 22.065 15.941 24 12.053 24 8.178 24 4.788 22.078 2 18.439zM12.04 6.15l-6.568 5.66-3.036-3.52L12.055 0l9.543 8.296-3.05 3.509z" fill="white"/>
+  </g>
 </svg>
