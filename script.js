@@ -268,3 +268,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* ---- Certificate Slider ---- */
+(function initCertSlider() {
+  const slides = document.querySelectorAll('.cert-slide');
+  const dots   = document.querySelectorAll('.cert-dot');
+  if (!slides.length) return;
+  let current = 0;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  slides[0].classList.add('active');
+
+  document.getElementById('certPrev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('certNext').addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  // Auto-advance every 4 seconds
+  setInterval(() => goTo(current + 1), 4000);
+})();
