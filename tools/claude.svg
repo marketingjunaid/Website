@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
   <rect width="40" height="40" rx="9" fill="#CC785C"/>
-  <!-- Anthropic "A" mark: vertical bars arranged in triangular/fan formation -->
-  <rect x="10" y="26" width="3" height="8" rx="1.5" fill="white"/>
-  <rect x="14.5" y="20" width="3" height="14" rx="1.5" fill="white"/>
-  <rect x="19" y="15" width="3" height="19" rx="1.5" fill="white"/>
-  <rect x="23.5" y="20" width="3" height="14" rx="1.5" fill="white"/>
-  <rect x="28" y="26" width="3" height="8" rx="1.5" fill="white"/>
+  <!-- Anthropic logo: symmetric fan of bars, all same width, centered -->
+  <rect x="8"  y="22" width="4" height="10" rx="2" fill="white"/>
+  <rect x="14" y="16" width="4" height="16" rx="2" fill="white"/>
+  <rect x="20" y="10" width="4" height="22" rx="2" fill="white"/>
+  <rect x="26" y="16" width="4" height="16" rx="2" fill="white"/>
+  <rect x="32" y="22" width="4" height="10" rx="2" fill="white"/>
 </svg>
