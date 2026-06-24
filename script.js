@@ -88,10 +88,6 @@
   if (!el) return;
   const roles = [
     'Project Manager',
-    'Digital Marketer',
-    'SEO Strategist',
-    'Growth Driver',
-    'Team Leader',
   ];
   let roleIdx = 0, charIdx = 0, deleting = false;
 
