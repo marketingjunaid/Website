@@ -1056,7 +1056,6 @@ ul { list-style: none; }
   position: relative;
   max-width: 640px;
   margin: 0 auto 0.5rem;
-  isolation: isolate;
   background: #ffffff;
   border-radius: 14px;
   padding: 0.5rem;
@@ -1071,20 +1070,21 @@ ul { list-style: none; }
 
 .cert-slide {
   display: none;
+  background: #ffffff;
+  line-height: 0;
 }
 
 .cert-slide.active {
   display: block;
+  background: #ffffff;
 }
 
 .cert-slide-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 14px;
-  filter: none;
-  mix-blend-mode: normal;
-  -webkit-filter: none;
+  border-radius: 0;
+  image-rendering: auto;
 }
 
 .cert-prev,
