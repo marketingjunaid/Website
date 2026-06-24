@@ -1041,12 +1041,17 @@ ul { list-style: none; }
   position: relative;
   max-width: 640px;
   margin: 0 auto 0.5rem;
+  isolation: isolate;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
 .cert-slider {
   overflow: hidden;
-  border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  background: #ffffff;
 }
 
 .cert-slide {
@@ -1062,6 +1067,9 @@ ul { list-style: none; }
   height: auto;
   display: block;
   border-radius: 14px;
+  filter: none;
+  mix-blend-mode: normal;
+  -webkit-filter: none;
 }
 
 .cert-prev,
