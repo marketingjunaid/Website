@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>M. Junaid Ashraf — App &amp; Game Development</title>
+<meta name="description" content="App &amp; game developer — Unity 3D and HTML5 game prototyping, hybrid-casual concept design, and AI-assisted build workflows, alongside 8+ years in digital project management."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#EDE9DF;--paper-2:#E4DFD2;--ink:#16181D;--ink-soft:#40434C;--ink-mute:#6E6F68;
+  --line:#C9C3B2;--signal:#1F3BE0;
+  --app:#146B7A;   /* app dev teal */
+  --game:#7C2CBF;  /* game dev violet */
+  --disp:'Space Grotesk',sans-serif;--body:'Newsreader',Georgia,serif;--mono:'Space Mono',ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;opacity:.14;mask-image:radial-gradient(ellipse 120% 90% at 50% 0%,#000 40%,transparent 100%);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);position:relative;z-index:2;}
+
+.statusbar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
+  padding:.55rem clamp(1.25rem,4vw,3rem);background:var(--ink);color:var(--paper);
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;}
+.statusbar a{color:var(--paper);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+.statusbar a:hover{border-color:var(--paper);}
+.statusbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ADE80;margin-right:.5rem;vertical-align:middle;animation:blink 2.4s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* hero */
+.hero{padding:8rem 0 3rem;}
+.hero-file{display:flex;justify-content:space-between;border-bottom:1.5px solid var(--ink);padding-bottom:.9rem;margin-bottom:2rem;color:var(--ink-mute);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;flex-wrap:wrap;gap:.4rem;}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,8vw,6rem);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;}
+.hero h1 .apc{color:var(--app);}
+.hero h1 .gmc{color:var(--game);}
+.hero-lede{font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.45;max-width:46ch;margin-top:1.6rem;color:var(--ink-soft);}
+.platstat{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.4rem;}
+.ps{border:1.5px solid var(--ink);padding:1.4rem 1.6rem;background:var(--paper-2);}
+.ps .pt{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);}
+.ps .pn{font-family:var(--disp);font-weight:700;font-size:2rem;line-height:1;margin:.3rem 0;letter-spacing:-.01em;}
+.ps.app .pn{color:var(--app);} .ps.game .pn{color:var(--game);}
+.ps .pd{font-size:.98rem;color:var(--ink-soft);}
+
+/* section shell */
+.section{padding:4.5rem 0;}
+.sec-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2.4rem;border-bottom:1.5px solid var(--ink);padding-bottom:1rem;flex-wrap:wrap;}
+.sec-code{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--signal);}
+.sec-title{font-family:var(--disp);font-weight:700;font-size:clamp(1.7rem,4.5vw,2.8rem);letter-spacing:-.02em;text-transform:uppercase;line-height:1;}
+.sec-note{margin-left:auto;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--ink-mute);text-transform:uppercase;}
+
+/* capability split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.plat{border:1.5px solid var(--ink);padding:1.8rem;background:var(--paper-2);}
+.plat-top{display:flex;align-items:center;gap:.8rem;border-bottom:1.5px solid var(--ink);padding-bottom:1rem;margin-bottom:1.1rem;}
+.plat-logo{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.plat-logo svg{width:24px;height:24px;fill:#fff;}
+.plat.app .plat-logo{background:var(--app);} .plat.game .plat-logo{background:var(--game);}
+.plat h3{font-family:var(--disp);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;}
+.plat h3 small{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:400;margin-top:2px;}
+.plat ul{list-style:none;}
+.plat li{position:relative;padding-left:1.4rem;margin-bottom:.55rem;color:var(--ink-soft);font-size:1.02rem;}
+.plat.app li::before{content:'';position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--app);border-radius:50%;}
+.plat.game li::before{content:'';position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--game);border-radius:50%;}
+
+/* lab / prototype cards (no fabricated shipped titles — honest work-in-progress grid) */
+.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.lab{background:var(--paper-2);border:1.5px solid var(--ink);display:flex;flex-direction:column;padding:1.5rem;transition:transform .28s,box-shadow .28s;}
+.lab:hover{transform:translateY(-5px);box-shadow:8px 8px 0 var(--ink);}
+.lab-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.7rem;}
+.lab-name{font-family:var(--disp);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;line-height:1.15;}
+.lab-badge{font-family:var(--mono);font-size:.53rem;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .5rem;white-space:nowrap;flex-shrink:0;}
+.lab-badge.proto{background:var(--app);color:#fff;}
+.lab-badge.concept{background:var(--game);color:#fff;}
+.lab-badge.research{border:1px solid var(--ink-mute);color:var(--ink-mute);}
+.lab-desc{font-size:.96rem;color:var(--ink-soft);line-height:1.45;flex:1;}
+.lab-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:1rem;}
+.lab-tags span{font-family:var(--mono);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;padding:.24rem .5rem;border:1px solid var(--line);color:var(--ink-mute);}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--ink);}
+.step{padding:1.6rem 1.4rem;border-right:1.5px solid var(--ink);}
+.step:last-child{border-right:none;}
+.step .sn{font-family:var(--disp);font-weight:700;font-size:2rem;color:var(--signal);line-height:1;}
+.step h4{font-family:var(--disp);font-weight:600;font-size:1.05rem;margin:.6rem 0 .4rem;}
+.step p{font-size:.92rem;color:var(--ink-soft);line-height:1.4;}
+
+/* cta band */
+.cta{background:var(--ink);color:var(--paper);padding:3.5rem 0;text-align:center;}
+.cta h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.02em;text-transform:uppercase;}
+.cta p{color:rgba(237,233,223,.7);margin:.8rem auto 1.8rem;max-width:44ch;}
+.cta .btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+.btn{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;padding:.9rem 1.6rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--paper);transition:.2s;}
+.btn-solid{background:var(--paper);color:var(--ink);}
+.btn-solid:hover{background:#7C8BFF;border-color:#7C8BFF;color:#fff;}
+.btn-ghost{color:var(--paper);}
+.btn-ghost:hover{background:var(--paper);color:var(--ink);}
+
+.foot{background:var(--ink);color:rgba(237,233,223,.6);border-top:1px solid rgba(237,233,223,.2);padding:2rem 0;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;}
+.foot .fi{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.foot a{color:var(--paper);text-decoration:none;}.foot a:hover{color:#7C8BFF;}
+.foot-btn{display:inline-flex;align-items:center;gap:.4rem;border:1.5px solid var(--paper);padding:.5rem 1rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)!important;text-decoration:none;transition:.2s;}
+.foot-btn:hover{background:var(--paper);color:var(--ink)!important;}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.19,1,.22,1),transform .7s cubic-bezier(.19,1,.22,1);}
+.rv.in{opacity:1;transform:none;}
+
+@media (max-width:820px){
+  body{font-size:16px;}
+  .platstat,.split{grid-template-columns:1fr;}
+  .lab-grid{grid-template-columns:1fr 1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .step:nth-child(2){border-right:none;}
+  .step:nth-child(1),.step:nth-child(2){border-bottom:1.5px solid var(--ink);}
+  .sec-note{display:none;}
+  .lab:hover{transform:none;box-shadow:5px 5px 0 var(--ink);}
+}
+@media (max-width:520px){
+  .lab-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .step{border-right:none;border-bottom:1.5px solid var(--ink);}
+  .step:last-child{border-bottom:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="statusbar">
+  <div><span class="dot"></span>App &amp; Game Development — building in Unity &amp; HTML5</div>
+  <div><a href="index.html">← Main site</a> &nbsp;·&nbsp; <a href="studio.html">Dossier</a></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-file">
+      <span>M. Junaid Ashraf / track-03.dev</span>
+      <span>Islamabad, PK</span>
+    </div>
+    <h1>App <span class="apc">&amp;</span> <span class="gmc">Game</span> Dev</h1>
+    <p class="hero-lede">Eight years running digital projects gave me the process discipline. The build side is where I actually spend my late nights — prototyping games in Unity and HTML5, and shaping app concepts from idea to playable, using AI-assisted pairing to move faster.</p>
+    <div class="platstat">
+      <div class="ps app">
+        <div class="pt">Track 01</div>
+        <div class="pn">App Dev</div>
+        <div class="pd">HTML5, mobile-web &amp; hybrid-casual product concepts</div>
+      </div>
+      <div class="ps game">
+        <div class="pt">Track 02</div>
+        <div class="pn">Game Dev</div>
+        <div class="pd">Unity 3D systems &amp; browser-based game prototyping</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section" id="depth">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-code">01</span>
+        <h2 class="sec-title">Build Depth</h2>
+        <span class="sec-note">Two tracks, one process</span>
+      </div>
+      <div class="split">
+        <div class="plat app rv">
+          <div class="plat-top">
+            <div class="plat-logo">
+              <svg viewBox="0 0 24 24"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-5 19a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM17 17H7V5h10z"/></svg>
+            </div>
+            <h3>App Development<small>Web &amp; Mobile</small></h3>
+          </div>
+          <ul>
+            <li>Responsive web-app &amp; PWA-style front ends</li>
+            <li>Hybrid-casual &amp; utility app concepting</li>
+            <li>Product thinking: onboarding, retention, monetization</li>
+            <li>Foundation: BS Software Engineering, NUML University</li>
+          </ul>
+        </div>
+        <div class="plat game rv">
+          <div class="plat-top">
+            <div class="plat-logo">
+              <svg viewBox="0 0 24 24"><path d="M17.5 6h-11A4.5 4.5 0 0 0 2 10.5v3A4.5 4.5 0 0 0 6.5 18c1.1 0 2.13-.44 2.9-1.2L11 15h2l1.6 1.8c.77.76 1.8 1.2 2.9 1.2A4.5 4.5 0 0 0 22 13.5v-3A4.5 4.5 0 0 0 17.5 6zM8 10v1.5H6.5V13H5v-1.5H3.5V10H5V8.5h1.5V10zm7.25 3a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm2.5-3.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
+            </div>
+            <h3>Game Development<small>Unity &amp; HTML5</small></h3>
+          </div>
+          <ul>
+            <li>Unity 3D — FPS mechanics &amp; systems prototyping</li>
+            <li>Browser games — HTML5/Canvas, multi-level design, Web Audio</li>
+            <li>AI-assisted workflow — Claude Code paired with Unity MCP</li>
+            <li>Market research across puzzle &amp; viral-hook mechanics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lab">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-code">02</span>
+        <h2 class="sec-title">In the Lab</h2>
+        <span class="sec-note">Prototypes &amp; concepts, not yet shipped</span>
+      </div>
+      <div class="lab-grid">
+        <div class="lab rv">
+          <div class="lab-top">
+            <span class="lab-name">Stealth Game Prototype</span>
+            <span class="lab-badge proto">Prototype</span>
+          </div>
+          <p class="lab-desc">A browser-based stealth game built in vanilla HTML5/JS — multi-level design with Web Audio driving detection and atmosphere cues.</p>
+          <div class="lab-tags"><span>HTML5</span><span>JavaScript</span><span>Web Audio</span></div>
+        </div>
+        <div class="lab rv">
+          <div class="lab-top">
+            <span class="lab-name">Unity FPS Concept</span>
+            <span class="lab-badge concept">Concept build</span>
+          </div>
+          <p class="lab-desc">A first-person shooter systems concept in Unity 3D — exploring core mechanics, level flow, and an AI-paired build process.</p>
+          <div class="lab-tags"><span>Unity 3D</span><span>C#</span><span>Claude Code</span></div>
+        </div>
+        <div class="lab rv">
+          <div class="lab-top">
+            <span class="lab-name">Hybrid-Casual Explorations</span>
+            <span class="lab-badge research">Market research</span>
+          </div>
+          <p class="lab-desc">Systematic study of the mobile gaming market — puzzle and viral-hook mechanics, hybrid-casual genre patterns, and publishing paths.</p>
+          <div class="lab-tags"><span>Mobile</span><span>Game Design</span><span>Publishing</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-code">03</span>
+        <h2 class="sec-title">How I Build</h2>
+        <span class="sec-note">Idea to iteration</span>
+      </div>
+      <div class="steps rv">
+        <div class="step">
+          <div class="sn">01</div>
+          <h4>Concept</h4>
+          <p>Define the core loop or the problem, sketch mechanics or flows, scope a small MVP.</p>
+        </div>
+        <div class="step">
+          <div class="sn">02</div>
+          <h4>Prototype</h4>
+          <p>Build the smallest playable or usable version — a Unity scene, an HTML5 canvas demo, an app skeleton.</p>
+        </div>
+        <div class="step">
+          <div class="sn">03</div>
+          <h4>Build</h4>
+          <p>Layer in systems and UX, playtest, iterate — with Claude Code and Unity MCP pairing on the code.</p>
+        </div>
+        <div class="step">
+          <div class="sn">04</div>
+          <h4>Ship &amp; Learn</h4>
+          <p>Package it for a platform, gather real feedback, decide what earns the next iteration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Got a game or app idea?</h2>
+    <p>Bring the concept — I'll help take it from sketch to a playable, shippable build.</p>
+    <div class="btns">
+      <a class="btn btn-solid" href="mailto:hello@techystorm.com">Start a conversation</a>
+      <a class="btn btn-ghost" href="index.html#portfolio">See my other work</a>
+    </div>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap fi">
+    <span>© 2026 M. Junaid Ashraf — App &amp; Game Development</span>
+    <span><a href="index.html">Main site</a> · <a href="studio.html">Dossier</a> · <a href="https://linkedin.com/in/marketingjunaid" target="_blank" rel="noopener">LinkedIn</a></span>
+    <a class="foot-btn" href="services.html">Other skills →</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
