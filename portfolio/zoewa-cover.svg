@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="zw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#141210"/>
+      <stop offset="55%"  stop-color="#1d1913"/>
+      <stop offset="100%" stop-color="#100e0a"/>
+    </linearGradient>
+    <linearGradient id="zw-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="60%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="zw-glow" cx="50%" cy="38%" r="46%">
+      <stop offset="0%"   stop-color="#e9c98a" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="zw-text-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#c9a97a" flood-opacity="0.45"/>
+    </filter>
+    <filter id="zw-icon-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#e9c98a" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#zw-bg)"/>
+  <ellipse cx="300" cy="130" rx="260" ry="150" fill="url(#zw-glow)"/>
+
+  <!-- Camera aperture motif -->
+  <g transform="translate(300,116)" filter="url(#zw-icon-glow)">
+    <circle cx="0" cy="0" r="34" fill="none" stroke="#e9c98a" stroke-width="2.6" opacity="0.95"/>
+    <g fill="#c9a97a" opacity="0.9">
+      <path d="M0,-30 L15,-4 L-15,-4 Z"/>
+      <path d="M0,-30 L15,-4 L-15,-4 Z" transform="rotate(60)"/>
+      <path d="M0,-30 L15,-4 L-15,-4 Z" transform="rotate(120)"/>
+      <path d="M0,-30 L15,-4 L-15,-4 Z" transform="rotate(180)"/>
+      <path d="M0,-30 L15,-4 L-15,-4 Z" transform="rotate(240)"/>
+      <path d="M0,-30 L15,-4 L-15,-4 Z" transform="rotate(300)"/>
+    </g>
+    <circle cx="0" cy="0" r="9" fill="#141210"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#e9c98a" stroke-width="1.6" opacity="0.9"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="300" y="205" font-family="Georgia, 'Times New Roman', serif"
+        font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle"
+        letter-spacing="3" filter="url(#zw-text-glow)">ZOEWA PHOTOGRAPHY</text>
+  <text x="300" y="228" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="11" font-weight="400" fill="#c9a97a" text-anchor="middle"
+        letter-spacing="4">SQUARESPACE WEBSITE</text>
+
+  <text x="300" y="250" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="10" font-weight="400" fill="rgba(255,255,255,0.4)" text-anchor="middle"
+        letter-spacing="1" font-style="italic">Design · Development · Portfolio</text>
+
+  <rect x="120" y="262" width="360" height="1" fill="url(#zw-shimmer)" opacity="0.5"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="600" height="50" fill="rgba(12,9,6,0.95)"/>
+  <rect x="0" y="290" width="600" height="1" fill="url(#zw-shimmer)" opacity="0.5"/>
+
+  <rect x="118" y="305" width="120" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="178" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Squarespace</text>
+
+  <rect x="248" y="305" width="120" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="308" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Web Development</text>
+
+  <rect x="378" y="305" width="104" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="430" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Photography</text>
+
+  <rect x="0" y="0" width="600" height="2" fill="url(#zw-shimmer)"/>
+  <g stroke="#c9a97a" stroke-width="1.2" fill="none" opacity="0.4">
+    <path d="M 18 18 L 18 36"/><path d="M 18 18 L 36 18"/>
+    <path d="M 582 288 L 582 270"/><path d="M 582 288 L 564 288"/>
+  </g>
+</svg>

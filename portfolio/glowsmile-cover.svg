@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="gs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#141210"/>
+      <stop offset="55%"  stop-color="#1d1913"/>
+      <stop offset="100%" stop-color="#100e0a"/>
+    </linearGradient>
+    <linearGradient id="gs-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c9a97a" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="60%"  stop-color="#c9a97a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gs-glow" cx="50%" cy="38%" r="46%">
+      <stop offset="0%"   stop-color="#e9c98a" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#c9a97a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gs-text-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#c9a97a" flood-opacity="0.45"/>
+    </filter>
+    <filter id="gs-icon-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#e9c98a" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#gs-bg)"/>
+  <ellipse cx="300" cy="130" rx="260" ry="150" fill="url(#gs-glow)"/>
+
+  <!-- Smile / tooth + sparkle motif -->
+  <g transform="translate(300,118)" filter="url(#gs-icon-glow)">
+    <!-- tooth -->
+    <path d="M0,-30 C-16,-30 -26,-18 -26,-2 C-26,14 -20,34 -12,34 C-6,34 -6,18 0,18 C6,18 6,34 12,34 C20,34 26,14 26,-2 C26,-18 16,-30 0,-30 Z"
+          fill="#e9c98a" opacity="0.95"/>
+    <path d="M-14,-14 C-10,-20 -2,-22 4,-19" fill="none" stroke="#b8915f" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+    <!-- sparkle -->
+    <g fill="#e9c98a" opacity="0.95">
+      <path d="M34,-24 l2.6,7 7,2.6 -7,2.6 -2.6,7 -2.6,-7 -7,-2.6 7,-2.6 z"/>
+    </g>
+  </g>
+
+  <!-- Brand name -->
+  <text x="300" y="205" font-family="Georgia, 'Times New Roman', serif"
+        font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle"
+        letter-spacing="4" filter="url(#gs-text-glow)">GLOWSMILE</text>
+  <text x="300" y="228" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="11" font-weight="400" fill="#c9a97a" text-anchor="middle"
+        letter-spacing="4">SHOPIFY · CONTENT</text>
+
+  <text x="300" y="250" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="10" font-weight="400" fill="rgba(255,255,255,0.4)" text-anchor="middle"
+        letter-spacing="1" font-style="italic">Store Tweaks · SEO Blog Writing</text>
+
+  <rect x="120" y="262" width="360" height="1" fill="url(#gs-shimmer)" opacity="0.5"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="600" height="50" fill="rgba(12,9,6,0.95)"/>
+  <rect x="0" y="290" width="600" height="1" fill="url(#gs-shimmer)" opacity="0.5"/>
+
+  <rect x="126" y="305" width="104" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="178" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Shopify</text>
+
+  <rect x="240" y="305" width="120" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="300" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">Blog Writing</text>
+
+  <rect x="370" y="305" width="104" height="22" rx="11" fill="rgba(201,169,122,0.12)" stroke="#c9a97a" stroke-width="0.8" opacity="0.85"/>
+  <text x="422" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" fill="#c9a97a" letter-spacing="0.5">SEO</text>
+
+  <rect x="0" y="0" width="600" height="2" fill="url(#gs-shimmer)"/>
+  <g stroke="#c9a97a" stroke-width="1.2" fill="none" opacity="0.4">
+    <path d="M 18 18 L 18 36"/><path d="M 18 18 L 36 18"/>
+    <path d="M 582 288 L 582 270"/><path d="M 582 288 L 564 288"/>
+  </g>
+</svg>
